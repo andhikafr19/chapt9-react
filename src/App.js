@@ -1,11 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
 import { Component } from 'react';
-import Submit from './components/Submit';
-import Forms from './components/Forms';
-import { Alert, Button, Container } from 'reactstrap';
-import styles from './style.module.css';
-
 class App extends Component {
   state = { danger: false }
 
