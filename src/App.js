@@ -1,25 +1,18 @@
-import { Component } from 'react';
-class App extends Component {
-  state = { danger: false }
+import React, { Component } from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
-  handleOnClick = (e) => {
-    this.setState({ danger: true})
-  }
+import Home from './pages/Home';
+import About from './pages/About';
+class App extends Component {
+
   render() {
-    const { danger } = this.state
     return (
-      <Container className={styles.container}>
-        <Container className='text-center'>
-          <Button className='mb-4' color='danger' onClick={this.handleOnClick}>Hati-hati</Button>
-          { danger && <Alert color='danger'>Sudah dibilang hati-hati</Alert> }
-          <div>
-            <Submit/>
-          </div>
-          <div>
-            <Forms/>
-          </div>
-        </Container>
-      </Container>
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<Home/>} />
+          <Route exact path='/about' element={<About/>} />
+        </Routes>
+      </Router>
     );
   }
 }
